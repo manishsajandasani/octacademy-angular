@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
   
 export class PostComponent implements OnInit {
+  title: string = "List of Posts";
+
   constructor() {}
   ngOnInit() : void {
     console.log("Loaded");  
