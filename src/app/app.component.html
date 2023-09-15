@@ -12,6 +12,7 @@
 <input (keyup)="onKeyUp1($event)" placeholder="Without Event Filtering"> <br> <br>
 <input (keyup.enter)="onKeyUp2()" placeholder="Press Enter"> <br> <br>
 <input (keyup.A)="onKeyUp2()" placeholder="Press A"> <br> <br>
+<input (keyup.enter)="onKeyUp3(username.value)" #username placeholder="Template Variable" > <br> <br>
 
 <ul>
   <li>Message From Child : Post Component</li>

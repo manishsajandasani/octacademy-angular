@@ -37,6 +37,11 @@ export class AppComponent implements AfterViewInit {
   onKeyUp2() {
     console.log("Key Pressed");
   }
+
+  // Template Variable
+  onKeyUp3(username:any) {
+    console.log(username);    
+  }
   
   /**
    * Here it prints `undefined`. But, why?

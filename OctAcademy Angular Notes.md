@@ -109,5 +109,6 @@ export class PostComponent implements OnInit {
     - CSS Style Binding
     - Event Binding
     - Event Filtering
+    - Template Variable
   - Angular Two Way Data Binding
   - Handle Events like click, keyup, filtering etc.
