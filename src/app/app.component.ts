@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit} from '@angular/core';
+import { Component, ViewChild, AfterViewInit, ChangeDetectorRef} from '@angular/core';
 import { PostComponent } from './post/post.component';
 
 @Component({
@@ -18,7 +18,7 @@ export class AppComponent implements AfterViewInit {
    * Here it prints `undefined`. But, why?
    * Because constructor function is called before the component is loaded in the browser.
    */
-  constructor() {
+  constructor(private cdRef: ChangeDetectorRef) {
     console.log(this.postChildMessage);    
   }
   
@@ -30,5 +30,6 @@ export class AppComponent implements AfterViewInit {
     console.log(this.postChildMessage);    
     console.log(this.postChildMessage.messageFromChildPost);    
     this.messageFromPost = this.postChildMessage.messageFromChildPost;
+    this.cdRef.detectChanges(); 
   }
 }
