@@ -17,6 +17,9 @@ export class AppComponent implements AfterViewInit {
 
   // Property Binding
   imgUrl: string = "https://ps.w.org/url-shortify/assets/icon-256x256.png?rev=2304705";
+
+  // Class Binding
+  textRedBool: boolean = true;
   
   /**
    * Here it prints `undefined`. But, why?

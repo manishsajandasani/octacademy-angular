@@ -22,3 +22,11 @@
 
 <h1> With Property Binding </h1>
 <img [src]="imgUrl" alt="">
+
+<h1 [class.text-red] = 'textRedBool'>
+  CSS Class Binding
+</h1>
+
+<h1 [style.color]='textRedBool ? "white" : "orange"' [style.backgroundColor]='textRedBool ? "green" : "blue"' style="text-decoration: line-through;">
+  CSS Style Binding
+</h1>

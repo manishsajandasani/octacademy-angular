@@ -104,5 +104,8 @@ export class PostComponent implements OnInit {
 - Data Display and Event Handling
   - Angular Data Binding Methods
     - String Interpolation {{  }}: It is used to show dynamic data inside the HTML page.
+    - Property Binding
+    - CSS Class Binding
+    - CSS Style Binding
   - Angular Two Way Data Binding
   - Handle Events like click, keyup, filtering etc.
