@@ -14,6 +14,9 @@ export class AppComponent implements AfterViewInit {
   messageFromPostViaOutput: string = "";
 
   @ViewChild(PostComponent) postChildMessage: any;
+
+  // Property Binding
+  imgUrl: string = "https://ps.w.org/url-shortify/assets/icon-256x256.png?rev=2304705";
   
   /**
    * Here it prints `undefined`. But, why?
