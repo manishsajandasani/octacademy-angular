@@ -96,3 +96,10 @@ export class PostComponent implements OnInit {
     - `{{ 3 / 0 }}`
 
 - How to Communicate or (Sharing Data) Between Two Components
+
+  - Parent to child Component via `@input Decorator`. `@Input Decorator` is used to share data between Parent Component and a Child Component.
+  - Child to Parent Component Via `@Output Decorator`
+  - Child to Parent when there is Event, using the `@Output Decorator` and `Event Emitter`
+
+- @Input Decorator
+  -
