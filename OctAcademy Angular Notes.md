@@ -99,4 +99,4 @@ export class PostComponent implements OnInit {
 
   - Parent to child Component via `@input Decorator`. `@Input Decorator` is used to share data between Parent Component and a Child Component.
   - Child to Parent Component Via `@ViewChild Decorator`
-  - Child to Parent when there is Event, using the `@Output Decorator` and `Event Emitter`
+  - Child to Parent when there is Event, using the `@Output Decorator` and `Event Emitter`. This approach is ideal when we want to share data changes that occur on things like button clicks, form entries, and other user events.

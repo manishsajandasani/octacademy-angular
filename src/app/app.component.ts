@@ -9,8 +9,9 @@ import { PostComponent } from './post/post.component';
   
 export class AppComponent implements AfterViewInit {
   title = 'AngIntroOctAcademy';
-  parentMessage: string = "Message from Parent: The App Component";
+  parentMessage: string = "Hii. This is App Component.";
   messageFromPost: string = "";
+  messageFromPostViaOutput: string = "";
 
   @ViewChild(PostComponent) postChildMessage: any;
   
@@ -31,5 +32,10 @@ export class AppComponent implements AfterViewInit {
     console.log(this.postChildMessage.messageFromChildPost);    
     this.messageFromPost = this.postChildMessage.messageFromChildPost;
     this.cdRef.detectChanges(); 
+  }
+
+  receivedPostChildMessage($event:any) {
+    console.log($event);    
+    this.messageFromPostViaOutput = $event; 
   }
 }
