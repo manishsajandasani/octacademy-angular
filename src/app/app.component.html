@@ -2,6 +2,17 @@
   This is App 2 Component Here...
 </h1>
 
+<button (click) = "clickMe()">
+  Event Binding Button
+</button> 
+
+<br>
+<br>
+
+<input (keyup)="onKeyUp1($event)" placeholder="Without Event Filtering"> <br> <br>
+<input (keyup.enter)="onKeyUp2()" placeholder="Press Enter"> <br> <br>
+<input (keyup.A)="onKeyUp2()" placeholder="Press A"> <br> <br>
+
 <ul>
   <li>Message From Child : Post Component</li>
   <li>

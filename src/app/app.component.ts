@@ -20,6 +20,23 @@ export class AppComponent implements AfterViewInit {
 
   // Class Binding
   textRedBool: boolean = true;
+
+  // Event Binding
+  clickMe() {
+    console.log("Event Binding Clicked");
+  }
+  
+  // Without Angular Event Filtering
+  onKeyUp1($event:any) {
+    if ($event.keyCode === 13) {
+      console.log("Without Event Filtering: " + $event.keyCode);
+    }
+  }
+
+  // Angular Event Filtering
+  onKeyUp2() {
+    console.log("Key Pressed");
+  }
   
   /**
    * Here it prints `undefined`. But, why?
