@@ -49,3 +49,41 @@
 <h1 [style.color]='textRedBool ? "white" : "orange"' [style.backgroundColor]='textRedBool ? "green" : "blue"' style="text-decoration: line-through;">
   CSS Style Binding
 </h1>
+
+<h1>============= Data Binding Task =============</h1>
+<div style="display: grid; grid-template-columns: repeat(2, 1fr);">
+  <div>
+    <input type="text" placeholder="Add Title" [(ngModel)]='textTitle'> <br> <br>
+    <textarea cols="21" rows="5" [(ngModel)]='textDetails'></textarea> <br> <br>
+    <input type="text" placeholder="Add Image URL" [(ngModel)]='taskImgUrl'> <br> <br>
+    <input type="text" placeholder="Add Web URL" [(ngModel)]='taskWebUrl'> <br> <br>
+    <input type="checkbox" [(ngModel)]='isChecked'> Add Background
+  </div>
+  
+  <div>
+    <p [class.yellowBg]="isChecked">{{ textTitle }}</p>
+    <p>{{ textDetails }}</p>
+    <img [src]="taskImgUrl" alt="" style="width: 100px;"> <br>
+    <a [href]="taskWebUrl" [style.display]='taskWebUrl ? "block" : "none"' target="_blank">Click Me</a>
+  </div>
+</div>
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

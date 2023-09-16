@@ -58,6 +58,13 @@ export class AppComponent implements AfterViewInit {
   onKeyUp6() {
     console.log(this.userText2);    
   }
+
+  // Data Binding Task
+  textTitle: string = "";
+  textDetails: string = "";
+  taskImgUrl: string = "";
+  taskWebUrl: string = "";
+  isChecked: boolean = false;
   
   /**
    * Here it prints `undefined`. But, why?
