@@ -13,6 +13,8 @@ export class AppComponent implements AfterViewInit {
   messageFromPost: string = "";
   messageFromPostViaOutput: string = "";
   userName: string = "";
+  userText: string = "I am Manish";
+  userText2: string = "I am Rahul";
 
   @ViewChild(PostComponent) postChildMessage: any;
 
@@ -47,6 +49,14 @@ export class AppComponent implements AfterViewInit {
   // Two Way Data Binding
   onKeyUp4() {
     console.log(this.userName);    
+  }
+
+  // One Way vs. Two Way Data Binding
+  onKeyUp5() {
+    console.log(this.userText);    
+  }
+  onKeyUp6() {
+    console.log(this.userText2);    
   }
   
   /**

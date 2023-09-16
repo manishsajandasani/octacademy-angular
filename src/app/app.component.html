@@ -15,7 +15,11 @@
 <input (keyup.enter)="onKeyUp3(username.value)" #username placeholder="Template Variable" > <br> <br>
 
 <!-- Two Way Data Binding -->
-<input type="text" (keyup.enter)="onKeyUp4()" [(ngModel)] = 'userName' placeholder="Two Way Data Binding">
+<input type="text" (keyup.enter)="onKeyUp4()" [(ngModel)] = 'userName' placeholder="Two Way Data Binding"><br> <br>
+
+<!-- One Way vs. Two Way Data Binding -->
+<input type="text" (keyup.enter) = 'onKeyUp5()' [value] = 'userText' placeholder="Ex. One way data binding"><br> <br>
+<input type="text" (keyup.enter) = 'onKeyUp6()' [(ngModel)] = 'userText2' placeholder="Ex. Two way data binding">
 
 <ul>
   <li>Message From Child : Post Component</li>

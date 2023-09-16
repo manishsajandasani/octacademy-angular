@@ -102,13 +102,16 @@ export class PostComponent implements OnInit {
   - Child to Parent when there is Event, using the `@Output Decorator` and `Event Emitter`. This approach is ideal when we want to share data changes that occur on things like button clicks, form entries, and other user events.
 
 - Data Display and Event Handling
-  - Angular Data Binding Methods: For Data Binding we use `Brackets []` and for Event Binding we use `Parenthesis ()`
-    - String Interpolation {{  }}: It is used to show dynamic data inside the HTML page.
-    - Property Binding
-    - CSS Class Binding
-    - CSS Style Binding
+  - For `Data Binding` we use `Brackets []`
+  - For `Event Binding` we use `Parenthesis ()`
+  - **One Way Data Binding:** Component to HTML (Can only bind data component to html). It is Uni Directional
+    - String Interpolation (used to show dynamic data inside the HTML page) => `{{title}}`
+    - Property Binding => `[src]`
+    - CSS Class Binding => `[class.text-red]`
+    - CSS Style Binding => `[style.color]`
+  - **Two Way Data Binding:** Component to HTML and Vice Versa (Can bind data component to html and vice versa). It is Bi-Directional
+    - Two Way Binding => `[(ngModel)]`
+  - Handle Events like click, keyup, filtering etc.
     - Event Binding
     - Event Filtering
-    - Template Variable
-    - Two Way Data Binding
-  - Handle Events like click, keyup, filtering etc.
+  - Template Variable
