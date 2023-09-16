@@ -12,6 +12,7 @@ export class AppComponent implements AfterViewInit {
   parentMessage: string = "Hii. This is App Component.";
   messageFromPost: string = "";
   messageFromPostViaOutput: string = "";
+  userName: string = "";
 
   @ViewChild(PostComponent) postChildMessage: any;
 
@@ -41,6 +42,11 @@ export class AppComponent implements AfterViewInit {
   // Template Variable
   onKeyUp3(username:any) {
     console.log(username);    
+  }
+
+  // Two Way Data Binding
+  onKeyUp4() {
+    console.log(this.userName);    
   }
   
   /**
