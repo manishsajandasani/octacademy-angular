@@ -13,6 +13,8 @@ export class PostComponent implements OnInit {
   messageFromChildPost: string = "Post Child Says Hi...";
   messageFromChildPostViaOutput: string = "Post Child Message via Output Decorator";
 
+  postArray: Array<string> = ["Post 1", "Post 2", "Post 3", "Post 4", "Post 5"];
+
   @Output() messageEvent = new EventEmitter<string>();
 
   constructor() {}
