@@ -197,6 +197,8 @@ export class PostComponent implements OnInit {
     - Loop through an array, array of objects,
   - ngIf Directive
   - ngTemplate Directive
+    - It works with structural directives only. `<ng-template>...</ng-template>` is a tag which is used to show stuff conditionally. We can't use it as a normal HTML Tag.
+    - It also works with truthy and falsy values.
   - ngSwitchCase Directive
 - Learn About ngClass & ngStyle Directive
 - Learn Difference of Structural and Attribute Directive
