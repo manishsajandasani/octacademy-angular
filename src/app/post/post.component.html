@@ -43,12 +43,18 @@
 
 <div style="margin: 30px 0;">
   <h3>========== *ngFor Directive (Object Array Example)==========</h3>
-  <button (click)="addObjToObjArray()">Add Object</button>
-  <ul>
-    <li *ngFor="let obj of objArray; let i = index"> 
-      {{ obj.title }} 
-      <button (click)="deleteObj1(obj)">Del1</button>
-      <button (click)="deleteObj2(i)">Del2</button>
-    </li>
-  </ul>
+  <div *ngIf = "objArray.length > 0">
+    <button (click)="addObjToObjArray()">Add Object</button>
+    <ul>
+      <li *ngFor="let obj of objArray; let i = index">
+        {{ obj.title }}
+        <button (click)="deleteObj1(obj)">Del1</button>
+        <button (click)="deleteObj2(i)">Del2</button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div style="margin-bottom: 30px;" *ngIf = "objArray.length == 0">
+  There is no data to display.....
 </div>

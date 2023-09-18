@@ -1,3 +1,46 @@
+# What I Learnt (Topics)
+
+- Installation of @angular/cli
+- Check version of @angular/cli
+- Create a new Angular Project and Run it
+- Folder Structure of an Angular App
+- Create Angular Component (Manually)
+- Create Angular Component (Angular CLI)
+- Component Decorator (selector, template, templateUrl, styles, styleUrls)
+- constructor method
+- OnInit Interface and ngOnInit Method
+- AfterViewInit Interface and ngAfterViewInit Method
+- ChangeDetectorRef, constructor(private cdRef: ChangeDetectorRef), this.cdRef.detectChanges();
+- Create Variables of every DataType, Arrays of every DataType, Array of Objects, etc.
+- Data Binding / String Interpolation
+- Sharing Data between Components
+  - Parent to Child - `@Input` Decorator
+  - Child to Parent - `@ViewChild` Decorator
+  - Child to Parent - `@Output` Decorator and `Event Emitter`
+- Data Binding `Brackets []`
+- Event Binding `Parenthesis ()`
+- One Way Data Binding
+  - String Interpolation - `{{ title }}`
+  - Property Binding - `[href] = '...'`
+  - Class Binding - `[class.text-red] = '...'`
+  - Style Binding - `[style.color] = '...'`
+- Two Way Data Binding
+  - Import FormsModule and use `[(ngModel)] = '...'`
+- Event Binding
+- Event Filtering
+- Template Variable
+- Directives
+  - Component Directive
+  - Structural Directive
+    - ngFor (Use of Array Index)
+    - ngIf
+    - ngTemplate
+    - ngSwitchCase
+  - Attribute Directive
+    - ngClass
+    - ngStyle
+  - Custom Directive
+
 # What is Angular?
 
 - It's a frontend JS framework to build client side applications using HTML, CSS, and JavaScript.
@@ -146,7 +189,7 @@ export class PostComponent implements OnInit {
   - Structural Directive => which can change the DOM layout by adding and removing DOM elements.
   - Attribute Directive => which can change the appearance or behavior of an element, component, or another directive.
   - Custom Directive => which can create our custom directive from scratch.
-- About
+- About Structural Directive
   - ngFor Directive
     - We use NgFor Directive to Render an Array inside the View
     - NgFor Directive is a Structural Directive.
