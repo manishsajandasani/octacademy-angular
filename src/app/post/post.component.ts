@@ -15,6 +15,8 @@ export class PostComponent implements OnInit {
 
   postArray: Array<string> = ["Post 1", "Post 2", "Post 3", "Post 4", "Post 5"];
 
+  objArray: Array<{id: number, title: string}> = [ { id: 1, title: 'Post One' }, { id: 2, title: 'Post Two' }, { id: 3, title: 'Post Three' }, { id: 4, title: 'Post Four' }, { id: 5, title: 'Post Five' }, ]
+
   @Output() messageEvent = new EventEmitter<string>();
 
   constructor() {}

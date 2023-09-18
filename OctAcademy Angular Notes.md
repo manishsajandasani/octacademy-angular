@@ -151,6 +151,7 @@ export class PostComponent implements OnInit {
     - We use NgFor Directive to Render an Array inside the View
     - NgFor Directive is a Structural Directive.
     - With NgFor Directive we can Manipulate The DOM.
+    - Loop through an array, array of objects,
   - ngIf Directive
   - ngTemplate Directive
   - ngSwitchCase Directive
