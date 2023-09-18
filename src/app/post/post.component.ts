@@ -15,7 +15,18 @@ export class PostComponent implements OnInit {
 
   postArray: Array<string> = ["Post 1", "Post 2", "Post 3", "Post 4", "Post 5"];
 
-  objArray: Array<{id: number, title: string}> = [ { id: 1, title: 'Post One' }, { id: 2, title: 'Post Two' }, { id: 3, title: 'Post Three' }, { id: 4, title: 'Post Four' }, { id: 5, title: 'Post Five' }, ]
+  objArray: Array<{ id: number, title: string }> = [{ id: 1, title: 'Post 1' }, { id: 2, title: 'Post 2' }, { id: 3, title: 'Post 3' }, { id: 4, title: 'Post 4' }, { id: 5, title: 'Post 5' },]
+  
+  addObjToObjArray() {
+    this.objArray.push({ id: 6, title: "Post Six" });
+  }
+
+  deleteObj1(obj: any) {
+    this.objArray.splice(this.objArray.indexOf(obj), 1);
+  }
+  deleteObj2(index: number) {
+    this.objArray.splice(index, 1);
+  }
 
   @Output() messageEvent = new EventEmitter<string>();
 

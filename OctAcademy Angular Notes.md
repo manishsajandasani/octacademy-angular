@@ -157,3 +157,5 @@ export class PostComponent implements OnInit {
   - ngSwitchCase Directive
 - Learn About ngClass & ngStyle Directive
 - Learn Difference of Structural and Attribute Directive
+- Change Detection (Adding or Removing Items in Real Time)
+- Usage of Array Index
