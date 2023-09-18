@@ -67,3 +67,28 @@
 <div *ngIf = '4<2; then div1 else div2'></div>
 <ng-template #div1>Div 1</ng-template>
 <ng-template #div2>Div 2</ng-template>
+
+<!-- ngSwitchCase Directive -->
+<div>
+  <button (click) = 'switchFunc("step 1")'>Btn 1</button>
+  <button (click) = 'switchFunc("step 2")'>Btn 2</button>
+  <button (click) = 'switchFunc("step 3")'>Btn 3</button>
+</div>
+
+<!-- <div>
+  <p *ngIf = 'switchCaseStatus == "step 1"'>Step 1 Visible</p>
+  <p *ngIf = 'switchCaseStatus == "step 2"'>Step 2 Visible</p>
+  <p *ngIf = 'switchCaseStatus == "step 3"'>Step 3 Visible</p>
+</div> -->
+
+<div [ngSwitch] = 'switchCaseStatus'>
+  <p *ngSwitchCase = "'step 1'">Step 1 Visible</p>
+  <p *ngSwitchCase = "'step 2'">Step 2 Visible</p>
+  <p *ngSwitchCase = "'step 3'">Step 3 Visible</p>
+  <p *ngSwitchDefault>Default Visible</p>
+</div>
+
+<br>
+<br>
+<br>
+<br>

@@ -39,4 +39,9 @@ export class PostComponent implements OnInit {
     console.log("Clicked");
     this.messageEvent.emit(this.messageFromChildPostViaOutput);
   }
+
+  switchCaseStatus: string = "Default";
+  switchFunc(status: any) {
+    this.switchCaseStatus = status;
+  }
 }
