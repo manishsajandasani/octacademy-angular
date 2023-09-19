@@ -68,7 +68,45 @@
   </div>
 </div>
 
+<h1>============= Data Binding + Directives Task =============</h1>
+<table border="2" cellspacing="10" style="width: 100%; table-layout: fixed;">
+  <tr>
+    <td style="padding: 15px; width: 25%;">Input</td>
+    <td style="padding: 15px;">Output</td>
+  </tr>
+  <tr>
+    <td style="padding: 15px;">
+      <input type="text" [(ngModel)] = 'directiveName' placeholder="Name" style="width: 100%;"> <br><br>
+      <input type="email" [(ngModel)] = 'directiveEmail' placeholder="Email" style="width: 100%;"><br><br>
+      <textarea cols="30" rows="10" [(ngModel)] = 'directiveAddress' style="width: 100%;"></textarea><br><br>
+      <button (click) = "saveDirectiveData()">Save Details</button>
+    </td>
+    <td style="padding: 15px; vertical-align: top;">
+      <table border="2" cellpadding="5" style="width: 100%;" *ngIf = "directiveArray.length > 0; else noData"> 
+        <tr style="text-align: center;">
+          <td>#</td>
+          <td>Name</td>
+          <td>Email</td>
+          <td>Address</td>
+          <td>Action</td>
+        </tr>
+        <tr *ngFor = 'let detail of directiveArray; let i = index' style="text-align: center;">
+          <td>{{ i + 1 }}</td>
+          <td>{{ detail.name }}</td>
+          <td style="word-break: break-all; width: 30%">{{ detail.email }}</td>
+          <td>{{ detail.address }}</td>
+          <td>
+            <button (click) = "delDirectiveArrayObj(i)">Delete</button>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
 
+<ng-template #noData>
+  <h3 style="text-align: center;">No Data Found</h3>
+</ng-template>
 
 
 

@@ -89,4 +89,22 @@ export class AppComponent implements AfterViewInit {
     console.log($event);    
     this.messageFromPostViaOutput = $event; 
   }
+
+  // Task Data Binding + Directives
+  directiveName: string = "";
+  directiveEmail: string = "";
+  directiveAddress: string = "";
+  directiveArray: Array<any> = [];
+
+  saveDirectiveData() {
+    this.directiveArray.push({
+      name: this.directiveName,
+      email: this.directiveEmail,
+      address: this.directiveAddress,
+    });
+  }
+
+  delDirectiveArrayObj(index: number) {
+    this.directiveArray.splice(index, 1);
+  }
 }
