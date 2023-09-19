@@ -32,10 +32,10 @@
 - Directives
   - Component Directive
   - Structural Directive
-    - ngFor (Use of Array Index)
-    - ngIf
-    - ngTemplate
-    - ngSwitchCase
+    - ngFor (Use of Array Index + Change Detection)
+    - ngIf with then and else condition
+    - ngTemplate with Template Variables and `ng-template` tag
+    - ngSwitchCase, ngSwitchDefault, ngSwitch Property Binding
   - Attribute Directive
     - ngClass
     - ngStyle
@@ -189,19 +189,25 @@ export class PostComponent implements OnInit {
   - Structural Directive => which can change the DOM layout by adding and removing DOM elements.
   - Attribute Directive => which can change the appearance or behavior of an element, component, or another directive.
   - Custom Directive => which can create our custom directive from scratch.
-- About Structural Directive
-  - ngFor Directive
-    - We use NgFor Directive to Render an Array inside the View
-    - NgFor Directive is a Structural Directive.
-    - With NgFor Directive we can Manipulate The DOM.
-    - Loop through an array, array of objects,
-  - ngIf Directive
-  - ngTemplate Directive
-    - It works with structural directives only. `<ng-template>...</ng-template>` is a tag which is used to show stuff conditionally. We can't use it as a normal HTML Tag.
-    - It also works with truthy and falsy values.
-  - ngSwitchCase Directive
-    -
-- Learn About ngClass & ngStyle Directive
+- Structural Directive
+  - Responsible for the HTML Layout
+  - Manipulate the DOM Structure by adding and removing HTML Elements.
+  - Can be Identified With Leading `*` Symbol
+  - Types
+    - ngFor Directive (Usage of Array Index)
+      - We use NgFor Directive to Render an Array inside the View
+      - NgFor Directive is a Structural Directive.
+      - With NgFor Directive we can Manipulate The DOM.
+      - Loop through an array, array of objects,
+    - ngIf Directive
+    - ngTemplate Directive
+      - It works with structural directives only. `<ng-template>...</ng-template>` is a tag which is used to show stuff conditionally. We can't use it as a normal HTML Tag.
+      - It also works with truthy and falsy values.
+    - ngSwitchCase Directive
+- Attribute Directive (Used with [])
+  - Change the appearance or the behaviour of a DOM Element
+  - Types
+    - ngStyle
+    - ngClass
 - Learn Difference of Structural and Attribute Directive
 - Change Detection (Adding or Removing Items in Real Time)
-- Usage of Array Index

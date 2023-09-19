@@ -88,6 +88,47 @@
   <p *ngSwitchDefault>Default Visible</p>
 </div>
 
+<!-- Conditional Styling with Style Binding (Not a cleaner approach)-->
+<div 
+[style.color] = 'isStyleActive ? "red" : "black"'
+[style.textTransform] = 'isStyleActive ? "uppercase" : "lowercase"'
+[style.marginTop] = 'isStyleActive ? "30px" : "0"'
+>
+  Multi-Styles Binding
+</div>
+
+<!-- Attribute Directive (ngStyle) -->
+<div 
+[ngStyle] = "{
+  color: isStyleActive ? 'green' : 'black',
+  textTransform: isStyleActive ? 'uppercase' : 'lowercase',
+  fontWeight: isStyleActive ? 'bold' : '',
+}"
+>
+  Multi-Styles Binding
+</div>
+
+<!-- Conditional Styling with Class Binding (Not a cleaner approach)-->
+<div 
+[class.ng-class-1] = 'isStyleActive'
+[class.ng-class-2] = 'isStyleActive'
+[class.ng-class-3] = 'isStyleActive'
+>
+  Multi-CSS-Classes Binding
+</div>
+
+<!-- Attribute Directive (ngClass) -->
+<div 
+[ngClass] = "
+{
+  'ng-class-1': isStyleActive,
+  'ng-class-2': isStyleActive,
+  'ng-class-3': isStyleActive,
+}"
+>
+  Multi-CSS-Classes Binding
+</div>
+
 <br>
 <br>
 <br>

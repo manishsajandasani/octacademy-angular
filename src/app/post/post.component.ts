@@ -44,4 +44,6 @@ export class PostComponent implements OnInit {
   switchFunc(status: any) {
     this.switchCaseStatus = status;
   }
+
+  isStyleActive: boolean = true;
 }
