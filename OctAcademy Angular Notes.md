@@ -39,7 +39,7 @@
   - Attribute Directive
     - ngClass
     - ngStyle
-  - Custom Directive
+  - Custom Directive (Didn't Learn)
 - Pipes
   - Uppercase
   - Lowercase
@@ -50,7 +50,9 @@
   - Percent
   - Slice
   - Pass Params to Pipes
-  - Create Custom Pipes from scratch and using Angular CLI
+  - Create Custom Pipes from scratch
+  - Create Custom Pipes using Angular CLI
+  - Create Custom Pipes using Angular CLI with Arguments
 
 # What is Angular?
 
@@ -243,3 +245,20 @@ export class PostComponent implements OnInit {
 - How to create a custom Pipe from Scratch.
 - How to create a custom Pipe using Angular CLI.
   - `ng g pipe Pipes/AppendCLI`
+
+# Angular Services
+
+- What is Angular Service & How to use?
+  - We use Angular Services to share data and common methods among components whether there is relation between components or not.
+- How to Create Angular Service From Scratch?
+- Service Registration (https://www.educative.io/answers/how-to-use-the-injectable-decorator-in-angular)
+  - Root Level
+  - Module Level
+  - Component Level
+- What is Dependency Injection (DI Providers and Injectable Decorators) & How to use?
+  - We shouldn't be using this in every component decorator `providers: [PostService]`. This would create hundreds of instances of a Service.
+  - Instead, mention the ServiceProvider in `app.module.ts` like this `providers: [PostService]`. This would create only one instance and will be accessible throughout the application's components. Or
+  - We can use Injectable Decorator in the ServiceProvider class like this `@Injectable({providedIn : "root"})` also import this `import { Injectable } from "@angular/core";`
+- Generate Angular Services using Angular CLI?
+  - `ng g s Services/user`
+- What is Data Modeling and Angular Interface?

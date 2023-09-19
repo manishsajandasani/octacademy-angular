@@ -2,3 +2,17 @@
   This is Navbar 
   <span>Component</span>
 </h1>
+
+<div style="margin: 50px 0 25px;">
+  <h1>====== Services in Navbar Component ======</h1>
+  <ul>
+    <li *ngFor='let post of posts'>{{ post.title }}</li>
+  </ul>
+</div>
+
+<div style="margin: 25px 0 25px;"> 
+  <h1>====== Services in Navbar Component (CLI) ======</h1>
+  <ul>
+    <li *ngFor='let user of users'>{{ user.name }}</li>
+  </ul>
+</div>
