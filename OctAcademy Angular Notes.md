@@ -49,6 +49,8 @@
   - JSON
   - Percent
   - Slice
+  - Pass Params to Pipes
+  - Create Custom Pipes from scratch and using Angular CLI
 
 # What is Angular?
 
@@ -239,3 +241,4 @@ export class PostComponent implements OnInit {
   - Slice Pipe
 - How to pass parameters to an Angular Pipe.
 - How to create a custom Pipe from Scratch.
+- How to create a custom Pipe using Angular CLI.
