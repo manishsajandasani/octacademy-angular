@@ -211,3 +211,22 @@ export class PostComponent implements OnInit {
     - ngClass
 - Learn Difference of Structural and Attribute Directive
 - Change Detection (Adding or Removing Items in Real Time)
+
+# Angular Pipes
+
+- What is Angular Pipe and How to use.
+  - Pipes are used to transform data into a particular format when we only need that data transformed 'in' a template or the HTML View.
+  - Examples of Pipes
+    - Angular Number/Decimal Pipe
+    - Angular Currency Pipe
+- What are the inbuilt Pipes in Angular.
+  - Uppercase Pipe
+  - Lowercase Pipe
+  - Decimal / Number Pipe
+  - Currency Pipe
+  - Date Pipe
+  - JSON Pipe
+  - Percent Pipe
+  - Slice Pipe
+- How to pass parameters to an Angular Pipe.
+- How to create a custom Pipe from Scratch.

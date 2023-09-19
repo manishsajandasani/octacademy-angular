@@ -107,4 +107,9 @@ export class AppComponent implements AfterViewInit {
   delDirectiveArrayObj(index: number) {
     this.directiveArray.splice(index, 1);
   }
+
+  // Angular Pipes
+  pipeTitle: string = "Angular Tutorial";
+  pipeNumber: number = 154652565;
+  pipeDecimal: number = 6.23564895;
 }
