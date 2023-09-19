@@ -112,4 +112,14 @@ export class AppComponent implements AfterViewInit {
   pipeTitle: string = "Angular Tutorial";
   pipeNumber: number = 154652565;
   pipeDecimal: number = 6.23564895;
+  pipeCurrency: number = 9.995689;
+  pipeDate: Date  = new Date();
+  pipeJson: any = {
+    id: 1,
+    postTitle: 'Post One'
+  };
+  pipePercent: number = 0.567;
+  pipeSlice: Array<string> = [
+    "post 1", "post 2", "post 3", "post 4", "post 5", "post 6"
+  ];
 }

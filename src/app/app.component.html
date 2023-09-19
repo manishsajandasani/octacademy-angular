@@ -121,10 +121,39 @@
 <p>Number/Decimal Pipe => {{ pipeDecimal | number: '2.2-2' }}</p>
 <p>Number/Decimal Pipe => {{ pipeDecimal | number: '5.2-2' }}</p>
 
+<h1 style="margin-top: 50px;">============= Currency Pipe =============</h1>
+<p>Number/Decimal Pipe => {{ pipeCurrency | currency }}</p>
+<p>Number/Decimal Pipe => {{ pipeCurrency | currency:"CAD" }}</p>
+<p>Number/Decimal Pipe => {{ pipeCurrency | currency:"INR" }}</p>
+<p>Number/Decimal Pipe => {{ pipeCurrency | currency:"JPY" }}</p>
+<p>Number/Decimal Pipe => {{ pipeCurrency | currency:"USD" : false }}</p>
+<p>Number/Decimal Pipe => {{ pipeCurrency | currency:"USD" : true }}</p>
+<p>Number/Decimal Pipe => {{ pipeCurrency | currency : "USD" : true : '3.2-4' }}</p>
 
+<h1 style="margin-top: 50px;">============= Date Pipe =============</h1>
+<!-- Refer: https://angular.io/api/common/DatePipe -->
+<p>Number/Decimal Pipe => {{ pipeDate }}</p>
+<p>Number/Decimal Pipe => {{ pipeDate | date : "short" }}</p>
+<p>Number/Decimal Pipe => {{ pipeDate | date : "shortDate"  }}</p>
+<p>Number/Decimal Pipe => {{ pipeDate | date : "d-M-yy"  }}</p>
+<p>Number/Decimal Pipe => {{ pipeDate | date : "d/MM/yyyy"  }}</p>
+<p>Number/Decimal Pipe => {{ pipeDate | date : "shortTime"  }}</p>
 
+<h1 style="margin-top: 50px;">============= JSON Pipe =============</h1>
+<p>Number/Decimal Pipe => {{ pipeJson }}</p>
+<p>Number/Decimal Pipe => {{ pipeJson | json }}</p>
+<p>Number/Decimal Pipe => {{ pipeJson.postTitle | json }}</p>
 
+<h1 style="margin-top: 50px;">============= Percent Pipe =============</h1>
+<p>Number/Decimal Pipe => {{ pipePercent | percent }}</p>
+<p>Number/Decimal Pipe => {{ 5 | percent }}</p>
+<p>Number/Decimal Pipe => {{ 5.59896 | percent }}</p>
+<p>Number/Decimal Pipe => {{ 5.59896 | percent : "2.3-3" }}</p>
 
+<h1 style="margin-top: 50px;">============= Slice Pipe =============</h1>
+<p>Number/Decimal Pipe => {{ pipeSlice }}</p>
+<p>Number/Decimal Pipe => {{ pipeSlice | slice : 0 : 3 }}</p>
+<p>Number/Decimal Pipe => {{ pipeSlice | slice : 3 : 5 }}</p>
 
 
 

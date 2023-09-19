@@ -40,6 +40,15 @@
     - ngClass
     - ngStyle
   - Custom Directive
+- Pipes
+  - Uppercase
+  - Lowercase
+  - Number/Decimal
+  - Currency
+  - Date
+  - JSON
+  - Percent
+  - Slice
 
 # What is Angular?
 
