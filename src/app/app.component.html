@@ -164,6 +164,12 @@
 <!-- Append 'City Name: ' -->
 <p>Custom Pipe => {{ "Mumbai" | appendCLI }}</p>
 
+<h1 style="margin-top: 50px;">============= Custom Pipe (With Arguments) =============</h1>
+<!-- Reduce a String to defined no. of characters -->
+<p>Custom Pipe => {{ pipeCustomString | summary : 20 }}</p>
+<p>Custom Pipe => {{ pipeCustomString | summary }}</p>
+<p>Custom Pipe => {{ pipeCustomString | summary : 40}}</p>
+
 <br>
 <br>
 <br>

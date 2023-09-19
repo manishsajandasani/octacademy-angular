@@ -122,4 +122,5 @@ export class AppComponent implements AfterViewInit {
   pipeSlice: Array<string> = [
     "post 1", "post 2", "post 3", "post 4", "post 5", "post 6"
   ];
+  pipeCustomString: string = "Hello World. I am Manish Sajandasani. I am a FullStack Developer. I work at Sagar Group. I am married.";
 }
