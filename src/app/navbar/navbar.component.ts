@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PostService } from '../Services/post.service';
 import { UserService } from '../Services/user.service';
+import { Usermodel } from '../Models/usermodel';
 
 @Component({
   selector: 'app-navbar',
@@ -34,7 +35,11 @@ export class NavbarComponent {
   }
 
   addUserToUserService() {
-    let user = { id: 4, name: this.newUserName };
+    let user : Usermodel =
+    {
+      id: 4,
+      name: this.newUserName
+    };
     this.userService.addUser(user);
     this.newUserName = "";
   }
