@@ -242,3 +242,4 @@ export class PostComponent implements OnInit {
 - How to pass parameters to an Angular Pipe.
 - How to create a custom Pipe from Scratch.
 - How to create a custom Pipe using Angular CLI.
+  - `ng g pipe Pipes/AppendCLI`
