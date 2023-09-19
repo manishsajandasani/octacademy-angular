@@ -10,4 +10,8 @@ export class UserService {
     {id: 1, name: "Sanjay"},
     {id: 1, name: "Rupesh"}
   ]
+
+  addUser(userObj : object) {
+    this.users.push(userObj);
+  }
 }

@@ -12,6 +12,8 @@
 
 <div style="margin: 25px 0 25px;"> 
   <h1>====== Services in Navbar Component (CLI) ======</h1>
+  <input type="text" [(ngModel)] = "newUserName">
+  <button (click) = "addUserToUserService()">Add User</button>
   <ul>
     <li *ngFor='let user of users'>{{ user.name }}</li>
   </ul>

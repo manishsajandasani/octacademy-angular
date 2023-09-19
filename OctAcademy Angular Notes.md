@@ -53,6 +53,16 @@
   - Create Custom Pipes from scratch
   - Create Custom Pipes using Angular CLI
   - Create Custom Pipes using Angular CLI with Arguments
+- Services
+  - Create Service from Scratch
+  - Create Service using Angular CLI
+  - Service Registration
+    - Component Level
+    - Module Level
+    - Root Level (@Injectable Decorator)
+  - Use Data Members of a Service (By Creating Instance)
+  - Use Data Members of a Service (By Dependency Injection)
+  - Perform CRUD Operations in Services
 
 # What is Angular?
 
@@ -261,4 +271,5 @@ export class PostComponent implements OnInit {
   - We can use Injectable Decorator in the ServiceProvider class like this `@Injectable({providedIn : "root"})` also import this `import { Injectable } from "@angular/core";`
 - Generate Angular Services using Angular CLI?
   - `ng g s Services/user`
+- CRUD with Angular Service
 - What is Data Modeling and Angular Interface?

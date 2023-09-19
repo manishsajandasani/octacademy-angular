@@ -24,11 +24,18 @@ import { UserService } from '../Services/user.service';
 export class NavbarComponent {
   posts: Array<any> = [];
   users: Array<any> = [];
+  newUserName: string = "";
 
   // We have used Dependency Injection Way
   constructor(private postService: PostService, private userService: UserService) {
     // let postService = new PostService();  (Old Traditional Way without Dependency Injection)
     this.posts = postService.posts;
     this.users = userService.users;
+  }
+
+  addUserToUserService() {
+    let user = { id: 4, name: this.newUserName };
+    this.userService.addUser(user);
+    this.newUserName = "";
   }
 }
