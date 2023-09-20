@@ -1,5 +1,6 @@
 import { Component, ViewChild, AfterViewInit, ChangeDetectorRef} from '@angular/core';
 import { PostComponent } from './post/post.component';
+import { NgForm, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -162,7 +163,13 @@ export class AppComponent implements AfterViewInit {
   // ===========================================================================================
 
   /* Template Driver Forms */
-
+  /* Must Import FormsModule in the app.module.ts file */
+  templateDrivenFormSubmit(f: NgForm) {
+    console.log(f);    
+  }
+  getValue(value: NgModel) {
+    console.log(value);
+  }
   // ===========================================================================================
   // ===========================================================================================
 }

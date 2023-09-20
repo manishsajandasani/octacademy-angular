@@ -282,5 +282,7 @@ export class PostComponent implements OnInit {
   - Template Driven Form
   - Reactive Form
 - What is Template Driven Form and how to use that?
-- How to Validate forms user inputs?
+  - ngForm Directive on the form tag to create formGroup Class Instance
+  - ngModel Directive on the input element to create fromControl Class Instance
+- How to Validate forms user inputs (Form Validation) in Template Driven Approach?
 - How to control Enable / Disable state of a button?

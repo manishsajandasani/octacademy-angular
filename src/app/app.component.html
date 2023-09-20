@@ -348,3 +348,26 @@
 <div class="web-section">
   <app-navbar></app-navbar>
 </div>
+
+<div class="web-section">
+  <!-- ngForm is a special directive which comes into existence when you import FormsModule in the app.module.ts file. Here #f is a Template Variable -->
+  <h3 class="box-title"># Template Driven Forms</h3>
+  <form #f = 'ngForm' (submit) = "templateDrivenFormSubmit(f)">
+    <div class="mb-3">
+      <label class="form-label">First Name</label>
+      <input ngModel type="text" class="form-control" placeholder="First Name" name="fname" #fname = 'ngModel' (change) = 'getValue(fname)' required>
+      <div class="text-danger mt-1" *ngIf="fname.touched && fname.invalid">Full Name is Required</div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" placeholder="Email" name="email" ngModel>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Address</label>
+      <textarea class="form-control" placeholder="Address" name="address" ngModel></textarea>
+    </div>
+    <button class="btn btn-dark">
+      Submit Form
+    </button>
+  </form>
+</div>
