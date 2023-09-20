@@ -8,3 +8,20 @@
 body {
   margin: 25px;
 }
+
+.web-section {
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+
+.web-section + .web-section {
+  margin-top: 30px;
+}
+
+.space-y-1 > *+* {
+  margin-top: 1rem;
+}
+
+.box-title {
+  margin-bottom: 20px;
+}

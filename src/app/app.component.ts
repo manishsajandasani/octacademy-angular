@@ -16,56 +16,13 @@ export class AppComponent implements AfterViewInit {
   userText: string = "I am Manish";
   userText2: string = "I am Rahul";
 
+  // ===========================================================================================
+  // ===========================================================================================
+
+  /* @ViewChild Decorator + Child to Parent Message */
+
   @ViewChild(PostComponent) postChildMessage: any;
-
-  // Property Binding
-  imgUrl: string = "https://ps.w.org/url-shortify/assets/icon-256x256.png?rev=2304705";
-
-  // Class Binding
-  textRedBool: boolean = true;
-
-  // Event Binding
-  clickMe() {
-    console.log("Event Binding Clicked");
-  }
-  
-  // Without Angular Event Filtering
-  onKeyUp1($event:any) {
-    if ($event.keyCode === 13) {
-      console.log("Without Event Filtering: " + $event.keyCode);
-    }
-  }
-
-  // Angular Event Filtering
-  onKeyUp2() {
-    console.log("Key Pressed");
-  }
-
-  // Template Variable
-  onKeyUp3(username:any) {
-    console.log(username);    
-  }
-
-  // Two Way Data Binding
-  onKeyUp4() {
-    console.log(this.userName);    
-  }
-
-  // One Way vs. Two Way Data Binding
-  onKeyUp5() {
-    console.log(this.userText);    
-  }
-  onKeyUp6() {
-    console.log(this.userText2);    
-  }
-
-  // Data Binding Task
-  textTitle: string = "";
-  textDetails: string = "";
-  taskImgUrl: string = "";
-  taskWebUrl: string = "";
-  isChecked: boolean = false;
-  
+ 
   /**
    * Here it prints `undefined`. But, why?
    * Because constructor function is called before the component is loaded in the browser.
@@ -90,7 +47,58 @@ export class AppComponent implements AfterViewInit {
     this.messageFromPostViaOutput = $event; 
   }
 
-  // Task Data Binding + Directives
+  // ===========================================================================================
+  // ===========================================================================================
+  
+  /* Binding : Property + Class */
+  imgUrl: string = "https://ps.w.org/url-shortify/assets/icon-256x256.png?rev=2304705";
+  textRedBool: boolean = true;
+
+  /* Event Binding + Filtering + Template Variable + One Way vs. Two Way Data Binding */
+  clickMe() {
+    console.log("Event Binding Clicked");
+  }
+
+  onKeyUp1($event:any) {
+    if ($event.keyCode === 13) {
+      console.log("Without Event Filtering: " + $event.keyCode);
+    }
+  }
+
+  onKeyUp2() {
+    console.log("Key Pressed");
+  }
+
+  onKeyUp3(username:any) {
+    console.log(username);    
+  }
+
+  onKeyUp4() {
+    console.log(this.userName);    
+  }
+
+  onKeyUp5() {
+    console.log(this.userText);    
+  }
+  
+  onKeyUp6() {
+    console.log(this.userText2);    
+  }
+
+  // ===========================================================================================
+  // ===========================================================================================
+
+  /* Data Binding Task */
+  textTitle: string = "";
+  textDetails: string = "";
+  taskImgUrl: string = "";
+  taskWebUrl: string = "";
+  isChecked: boolean = false;  
+
+  // ===========================================================================================
+  // ===========================================================================================
+
+  /* Task Data Binding + Directives */
   directiveName: string = "";
   directiveEmail: string = "";
   directiveAddress: string = "";
@@ -103,12 +111,14 @@ export class AppComponent implements AfterViewInit {
       address: this.directiveAddress,
     });
   }
-
   delDirectiveArrayObj(index: number) {
     this.directiveArray.splice(index, 1);
   }
 
-  // Angular Pipes
+  // ===========================================================================================
+  // ===========================================================================================
+
+  /* Angular Pipes */
   pipeTitle: string = "Angular Tutorial";
   pipeNumber: number = 154652565;
   pipeDecimal: number = 6.23564895;
@@ -123,4 +133,36 @@ export class AppComponent implements AfterViewInit {
     "post 1", "post 2", "post 3", "post 4", "post 5", "post 6"
   ];
   pipeCustomString: string = "Hello World. I am Manish Sajandasani. I am a FullStack Developer. I work at Sagar Group. I am married.";
+  
+  // ===========================================================================================
+  // ===========================================================================================
+  
+  /* Directives */
+  postArray: Array<string> = ["Post 1", "Post 2", "Post 3", "Post 4", "Post 5"];
+  objArray: Array<{ id: number, title: string }> = [{ id: 1, title: 'Post 1' }, { id: 2, title: 'Post 2' }, { id: 3, title: 'Post 3' }, { id: 4, title: 'Post 4' }, { id: 5, title: 'Post 5' },]
+
+  addObjToObjArray() {
+    this.objArray.push({ id: 6, title: "Post Six" });
+  }
+  deleteObj1(obj: any) {
+    this.objArray.splice(this.objArray.indexOf(obj), 1);
+  }
+  deleteObj2(index: number) {
+    this.objArray.splice(index, 1);
+  }
+
+  isStyleActive: boolean = true;
+  switchCaseState: string = "step 2";
+  switchCaseStatus: string = "Default";
+  switchFunc(status: any) {
+    this.switchCaseStatus = status;
+  }
+
+  // ===========================================================================================
+  // ===========================================================================================
+
+  /* Template Driver Forms */
+
+  // ===========================================================================================
+  // ===========================================================================================
 }

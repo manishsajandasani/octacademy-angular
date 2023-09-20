@@ -1,20 +1,20 @@
-<h1>
-  This is Navbar 
-  <span>Component</span>
-</h1>
+<h3 class="box-title"> This is Navbar <span>Component</span></h3>
 
-<div style="margin: 50px 0 25px;">
-  <h1>====== Services in Navbar Component ======</h1>
-  <ul>
+<div class="web-section">
+  <h3 class="box-title"> # Services in Navbar Component</h3>
+  <ul class="mb-0">
     <li *ngFor='let post of posts'>{{ post.title }}</li>
   </ul>
 </div>
 
-<div style="margin: 25px 0 25px;"> 
-  <h1>====== Services in Navbar Component (CLI) ======</h1>
-  <input type="text" [(ngModel)] = "newUserName">
-  <button (click) = "addUserToUserService()">Add User</button>
-  <ul>
-    <li *ngFor='let user of users'>{{ user.name }}</li>
-  </ul>
+<div class="web-section"> 
+  <h3 class="box-title mb-0"> # Services in Navbar Component</h3>
+  <h4 class="mb-3">(Angular CLI + Dependency Injection + CRUD to Service + Interface [Data Modeling])</h4>
+  <div class="space-y-1">
+    <input type="text" [(ngModel)]="newUserName" class="form-control">
+    <button (click)="addUserToUserService()" class="btn btn-primary">Add User</button>
+    <ul class="mb-0">
+      <li *ngFor='let user of users'>{{ user.name }}</li>
+    </ul>
+  </div>
 </div>

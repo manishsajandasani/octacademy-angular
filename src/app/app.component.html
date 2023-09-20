@@ -1,186 +1,350 @@
-<h1>
-  This is App 2 Component Here...
-</h1>
+<div class="web-section">
+  <h3 class="box-title"> # This is App Component </h3>
+  <button (click)="clickMe()" class="btn btn-primary">
+    Event Binding Button
+  </button>
+</div>
 
-<button (click) = "clickMe()">
-  Event Binding Button
-</button> 
-
-<br>
-<br>
-
-<input (keyup)="onKeyUp1($event)" placeholder="Without Event Filtering"> <br> <br>
-<input (keyup.enter)="onKeyUp2()" placeholder="Press Enter"> <br> <br>
-<input (keyup.A)="onKeyUp2()" placeholder="Press A"> <br> <br>
-<input (keyup.enter)="onKeyUp3(username.value)" #username placeholder="Template Variable" > <br> <br>
-
-<!-- Two Way Data Binding -->
-<input type="text" (keyup.enter)="onKeyUp4()" [(ngModel)] = 'userName' placeholder="Two Way Data Binding"><br> <br>
-
-<!-- One Way vs. Two Way Data Binding -->
-<input type="text" (keyup.enter) = 'onKeyUp5()' [value] = 'userText' placeholder="Ex. One way data binding"><br> <br>
-<input type="text" (keyup.enter) = 'onKeyUp6()' [(ngModel)] = 'userText2' placeholder="Ex. Two way data binding">
-
-<ul>
-  <li>Message From Child : Post Component</li>
-  <li>
-    {{ messageFromPost }}
-  </li>
-</ul>
-
-<app-navbar></app-navbar>
-<app-post [fromParent]='parentMessage' (messageEvent)='receivedPostChildMessage($event)'></app-post>
-
-<h1>
-  Message From Child <br>
-  {{ messageFromPostViaOutput }}
-</h1>
-
-<h1> With String Interpolation </h1>
-<img src="{{ imgUrl }}" alt="">
-
-<h1> With Property Binding </h1>
-<img [src]="imgUrl" alt="">
-
-<h1 [class.text-red] = 'textRedBool'>
-  CSS Class Binding
-</h1>
-
-<h1 [style.color]='textRedBool ? "white" : "orange"' [style.backgroundColor]='textRedBool ? "green" : "blue"' style="text-decoration: line-through;">
-  CSS Style Binding
-</h1>
-
-<h1>============= Data Binding Task =============</h1>
-<div style="display: grid; grid-template-columns: repeat(2, 1fr);">
-  <div>
-    <input type="text" placeholder="Add Title" [(ngModel)]='textTitle'> <br> <br>
-    <textarea cols="21" rows="5" [(ngModel)]='textDetails'></textarea> <br> <br>
-    <input type="text" placeholder="Add Image URL" [(ngModel)]='taskImgUrl'> <br> <br>
-    <input type="text" placeholder="Add Web URL" [(ngModel)]='taskWebUrl'> <br> <br>
-    <input type="checkbox" [(ngModel)]='isChecked'> Add Background
-  </div>
-  
-  <div>
-    <p [class.yellowBg]="isChecked">{{ textTitle }}</p>
-    <p>{{ textDetails }}</p>
-    <img [src]="taskImgUrl" alt="" style="width: 100px;"> <br>
-    <a [href]="taskWebUrl" [style.display]='taskWebUrl ? "block" : "none"' target="_blank">Click Me</a>
+<div class="web-section">
+  <h3 class="box-title"> # Event Binding and Event Filtering</h3>
+  <div class="space-y-1">
+    <input class="form-control" (keyup)="onKeyUp1($event)" placeholder="Enter Key Binding But Without Event Filtering">
+    <input class="form-control" (keyup.enter)="onKeyUp2()" placeholder="Enter Key Binding With Event Filtering">
+    <input class="form-control" (keyup.A)="onKeyUp2()" placeholder="A Key Binding With Event Filtering">
+    <input class="form-control" (keyup.enter)="onKeyUp3(username.value)" #username
+      placeholder="Template Variable with Event Filtering">
   </div>
 </div>
 
-<h1>============= Data Binding + Directives Task =============</h1>
-<table border="2" cellspacing="10" style="width: 100%; table-layout: fixed;">
-  <tr>
-    <td style="padding: 15px; width: 25%;">Input</td>
-    <td style="padding: 15px;">Output</td>
-  </tr>
-  <tr>
-    <td style="padding: 15px;">
-      <input type="text" [(ngModel)] = 'directiveName' placeholder="Name" style="width: 100%;"> <br><br>
-      <input type="email" [(ngModel)] = 'directiveEmail' placeholder="Email" style="width: 100%;"><br><br>
-      <textarea cols="30" rows="10" [(ngModel)] = 'directiveAddress' style="width: 100%;"></textarea><br><br>
-      <button (click) = "saveDirectiveData()">Save Details</button>
-    </td>
-    <td style="padding: 15px; vertical-align: top;">
-      <table border="2" cellpadding="5" style="width: 100%;" *ngIf = "directiveArray.length > 0; else noData"> 
-        <tr style="text-align: center;">
-          <td>#</td>
-          <td>Name</td>
-          <td>Email</td>
-          <td>Address</td>
-          <td>Action</td>
-        </tr>
-        <tr *ngFor = 'let detail of directiveArray; let i = index' style="text-align: center;">
-          <td>{{ i + 1 }}</td>
-          <td>{{ detail.name }}</td>
-          <td style="word-break: break-all; width: 30%">{{ detail.email }}</td>
-          <td>{{ detail.address }}</td>
-          <td>
-            <button (click) = "delDirectiveArrayObj(i)">Delete</button>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
+<div class="web-section">
+  <h3 class="box-title"># Two Way Data Binding</h3>
+  <input class="form-control" type="text" (keyup)="onKeyUp4()" [(ngModel)]='userName' placeholder="Two Way Data Binding"> 
+</div>
 
-<ng-template #noData>
-  <h3 style="text-align: center;">No Data Found</h3>
-</ng-template>
+<div class="web-section">
+  <h3 class="box-title"># One Way vs. Two Way Data Binding</h3>
+  <div class="space-y-1">
+    <input class="form-control" type="text" (keyup)='onKeyUp5()' [value]='userText'
+    placeholder="Ex. One way data binding">
+    <input class="form-control" type="text" (keyup)='onKeyUp6()' [(ngModel)]='userText2'
+      placeholder="Ex. Two way data binding">
+  </div>
+</div>
 
-<!-- Angular Pipes -->
-<h1 style="margin-top: 50px;">============= Uppercase and Lowercase Pipe =============</h1>
-<p>Uppercase Pipe => {{ pipeTitle | uppercase }}</p>
-<p>Lowercase Pipe => {{ pipeTitle | lowercase }}</p>
+<div class="web-section">
+  <h3 class="box-title"># Child to Parent Data Sharing using @Output Decorator</h3>
+  <ul class="mb-0">
+    <li>Message From Child : Post Component</li>
+    <li>
+      {{ messageFromPost }}
+    </li>
+  </ul>
+</div>
 
-<h1 style="margin-top: 50px;">============= Number or Decimal Pipe =============</h1>
-<p>Number/Decimal Pipe => {{ pipeNumber | number }}</p>
-<p>Number/Decimal Pipe => {{ pipeDecimal | number: '1.2-5' }}</p>
-<p>Number/Decimal Pipe => {{ pipeDecimal | number: '2.0-0' }}</p>
-<p>Number/Decimal Pipe => {{ pipeDecimal | number: '2.0-1' }}</p>
-<p>Number/Decimal Pipe => {{ pipeDecimal | number: '2.2-2' }}</p>
-<p>Number/Decimal Pipe => {{ pipeDecimal | number: '5.2-2' }}</p>
+<div class="web-section">
+  <app-post [fromParent]='parentMessage' (messageEvent)='receivedPostChildMessage($event)'></app-post>
+  <h3 class="box-title">
+    Message From Child <br>
+    {{ messageFromPostViaOutput }}
+  </h3>
+</div>
 
-<h1 style="margin-top: 50px;">============= Currency Pipe =============</h1>
-<p>Currency Pipe => {{ pipeCurrency | currency }}</p>
-<p>Currency Pipe => {{ pipeCurrency | currency:"CAD" }}</p>
-<p>Currency Pipe => {{ pipeCurrency | currency:"INR" }}</p>
-<p>Currency Pipe => {{ pipeCurrency | currency:"JPY" }}</p>
-<p>Currency Pipe => {{ pipeCurrency | currency:"USD" : false }}</p>
-<p>Currency Pipe => {{ pipeCurrency | currency:"USD" : true }}</p>
-<p>Currency Pipe => {{ pipeCurrency | currency : "USD" : true : '3.2-4' }}</p>
+<div class="web-section space-y-1">
+  <h3 class="box-title"> # Angular Directives</h3>
+  
+  <div class="web-section">
+    <h3 class="box-title"># *ngFor Directive (Array Example)</h3>
+    <h4>With Index</h4>
+    <ul>
+      <li>{{ postArray[0] }}</li>
+      <li>{{ postArray[1] }}</li>
+      <li>{{ postArray[2] }}</li>
+      <li>{{ postArray[3] }}</li>
+      <li>{{ postArray[4] }}</li>
+    </ul>
 
-<h1 style="margin-top: 50px;">============= Date Pipe =============</h1>
-<!-- Refer: https://angular.io/api/common/DatePipe -->
-<p>Date Pipe => {{ pipeDate }}</p>
-<p>Date Pipe => {{ pipeDate | date : "short" }}</p>
-<p>Date Pipe => {{ pipeDate | date : "shortDate"  }}</p>
-<p>Date Pipe => {{ pipeDate | date : "d-M-yy"  }}</p>
-<p>Date Pipe => {{ pipeDate | date : "d/MM/yyyy"  }}</p>
-<p>Date Pipe => {{ pipeDate | date : "shortTime"  }}</p>
+    <h4>With ngFor Loop</h4>
+    <ul>
+      <li *ngFor="let post of postArray">
+        {{ post }}
+      </li>
+    </ul>
+  </div>
+  
+  <div class="web-section">
+    <h3 class="box-title"># *ngFor Directive (Object Array Example) </h3>
+    <div *ngIf="objArray.length > 0; else noData">
+      <button (click)="addObjToObjArray()" class="btn btn-primary">Add Object</button>
+      <ul>
+        <li *ngFor="let obj of objArray; let i = index" class="p-2">
+          {{ obj.title }}
+          <button (click)="deleteObj1(obj)" class="btn btn-danger btn-sm mx-3">Del1</button>
+          <button (click)="deleteObj2(i)" class="btn btn-danger btn-sm">Del2</button>
+        </li>
+      </ul>
+    </div>
 
-<h1 style="margin-top: 50px;">============= JSON Pipe =============</h1>
-<p>JSON Pipe => {{ pipeJson }}</p>
-<p>JSON Pipe => {{ pipeJson | json }}</p>
-<p>JSON Pipe => {{ pipeJson.postTitle | json }}</p>
+    <!-- If/Else Condition with Template Variable -->
+    <ng-template style="margin-bottom: 30px;" #noData>
+      There is no data to display.....
+    </ng-template>
 
-<h1 style="margin-top: 50px;">============= Percent Pipe =============</h1>
-<p>Percent Pipe => {{ pipePercent | percent }}</p>
-<p>Percent Pipe => {{ 5 | percent }}</p>
-<p>Percent Pipe => {{ 5.59896 | percent }}</p>
-<p>Percent Pipe => {{ 5.59896 | percent : "2.3-3" }}</p>
+    <div style="margin-bottom: 30px;" *ngIf="objArray.length == 0">
+      No Objects Found
+    </div>
+  </div>
+  
+  <div class="web-section">
+    <h3 class="box-title"># *ngIf Directive </h3>
+    <div *ngIf='4>2; then div1 else div2'></div>
+    <ng-template #div1>
+      <h4>True Condition</h4>
+    </ng-template>
+    <ng-template #div2>
+      <h4>False Condition</h4>  
+    </ng-template>
+  </div>
 
-<h1 style="margin-top: 50px;">============= Slice Pipe =============</h1>
-<p>Slice Pipe => {{ pipeSlice }}</p>
-<p>Slice Pipe => {{ pipeSlice | slice : 0 : 3 }}</p>
-<p>Slice Pipe => {{ pipeSlice | slice : 3 : 5 }}</p>
+  <div class="web-section">
+    <h3 class="box-title"># Without ngSwitchCase Directive (Have to use *ngIf Directive)</h3>
+    <h4 *ngIf = 'switchCaseState == "step 1"'>Step 1 Visible</h4>
+    <h4 *ngIf = 'switchCaseState == "step 2"'>Step 2 Visible</h4>
+    <h4 *ngIf = 'switchCaseState == "step 3"'>Step 3 Visible</h4>
+  </div>
+  
+  <div class="web-section">
+    <h3 class="box-title"># ngSwitchCase Directive</h3>
+    <div class="d-flex mb-3" style="gap: 10px;">
+      <button (click)='switchFunc("step 1")' class="btn btn-primary">Btn 1</button>
+      <button (click)='switchFunc("step 2")' class="btn btn-primary">Btn 2</button>
+      <button (click)='switchFunc("step 3")' class="btn btn-primary">Btn 3</button>
+    </div>
+    <div [ngSwitch]='switchCaseStatus'>
+      <h4 *ngSwitchCase="'step 1'">Step 1 Visible</h4>
+      <h4 *ngSwitchCase="'step 2'">Step 2 Visible</h4>
+      <h4 *ngSwitchCase="'step 3'">Step 3 Visible</h4>
+      <h4 *ngSwitchDefault>Default Visible</h4>
+    </div>
+  </div>
 
-<h1 style="margin-top: 50px;">============= Custom Pipe (Scratch) =============</h1>
-<!-- Append 'Manish says' -->
-<p>Custom Pipe => {{ "Hello." | append }}</p>
-<p>Custom Pipe => {{ "that he loves Watermelon." | append }}</p>
+  <div class="web-section">
+    <h3 class="box-title"># Conditional Styling with Style Binding (Not a cleaner approach)</h3>
+    <div [style.color]='isStyleActive ? "red" : "black"' [style.textTransform]='isStyleActive ? "uppercase" : "lowercase"'
+      [style.fontWeight]='isStyleActive ? "bold" : ""'>
+      <h4>Multi-Styles Binding</h4>
+    </div>
+  </div>
+  
+  <div class="web-section">
+    <h3 class="box-title"># Attribute Directive (ngStyle)</h3>
+    <div [ngStyle]="{
+        color: isStyleActive ? 'green' : 'black',
+        textTransform: isStyleActive ? 'uppercase' : 'lowercase',
+        fontWeight: isStyleActive ? 'bold' : '',
+      }">
+      <h4>Multi-Styles Binding</h4>
+    </div>
+  </div>
+  
+  <div class="web-section">
+    <h3 class="box-title"># Conditional Styling with Class Binding (Not a cleaner approach)</h3>
+    <div [class.ng-class-1]='isStyleActive' [class.ng-class-2]='isStyleActive' [class.ng-class-3]='isStyleActive'>
+      <h4>Multi-CSS-Classes Binding</h4>
+    </div>
+  </div>
+  
+  <div class="web-section">
+    <h3 class="box-title"># Attribute Directive (ngClass)</h3>
+    <div [ngClass]="
+      {
+        'ng-class-1': isStyleActive,
+        'ng-class-2': isStyleActive,
+        'ng-class-3': isStyleActive,
+      }">
+      <h4>Multi-CSS-Classes Binding</h4>
+    </div>
+  </div>
+</div>
 
-<h1 style="margin-top: 50px;">============= Custom Pipe (Angular CLI) =============</h1>
-<!-- Append 'City Name: ' -->
-<p>Custom Pipe => {{ "Mumbai" | appendCLI }}</p>
+<div class="web-section space-y-1">
+  <h3 class="box-title"> # Types of Binding</h3>
 
-<h1 style="margin-top: 50px;">============= Custom Pipe (With Arguments) =============</h1>
-<!-- Reduce a String to defined no. of characters -->
-<p>Custom Pipe => {{ pipeCustomString | summary : 20 }}</p>
-<p>Custom Pipe => {{ pipeCustomString | summary }}</p>
-<p>Custom Pipe => {{ pipeCustomString | summary : 40}}</p>
+  <div class="web-section">
+    <h3 class="box-title"> 1. String Interpolation </h3>
+    <img src="{{ imgUrl }}" alt="">
+  </div>
+  
+  <div class="web-section">
+    <h3 class="box-title"> 2. Property Binding </h3>
+    <img [src]="imgUrl" alt="">
+  </div>
+  
+  <div class="web-section">
+    <h3 class="box-title"> 3. Class Binding </h3>
+    <h3 [class.text-red]='textRedBool'>
+      Place Class Conditionally
+    </h3>
+  </div>
+  
+  <div class="web-section">
+    <h3 class="box-title"> 4. Style Binding </h3>
+    <h3 [style.color]='textRedBool ? "white" : "orange"' [style.backgroundColor]='textRedBool ? "green" : "blue"'
+    style="text-decoration: line-through;">
+      Place Style Conditionally
+    </h3>
+  </div>
+</div>
 
+<div class="web-section">
+  <h3 class="box-title"># Data Binding Task</h3>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="space-y-1">
+        <input class="form-control" type="text" placeholder="Add Title" [(ngModel)]='textTitle'>
+        <textarea class="form-control" cols="21" rows="5" [(ngModel)]='textDetails'></textarea>
+        <input class="form-control" type="text" placeholder="Add Image URL" [(ngModel)]='taskImgUrl'>
+        <input class="form-control" type="text" placeholder="Add Web URL" [(ngModel)]='taskWebUrl'>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" [(ngModel)]='isChecked'>
+          <label class="form-check-label" for="flexCheckDefault">
+            Add Background
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div>
+        <p [class.yellowBg]="isChecked">{{ textTitle }}</p>
+        <p>{{ textDetails }}</p>
+        <img [src]="taskImgUrl" alt="" style="width: 100px;"> <br>
+        <a [href]="taskWebUrl" [style.display]='taskWebUrl ? "block" : "none"' target="_blank">Click Me</a>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="web-section">
+  <h3 class="box-title"># Data Binding + Directives Task</h3>
+  <table class="table-primary border border-dark w-100">
+    <tr>
+      <td class="p-3 w-25 text-center border border-dark"><h3>Input</h3></td>
+      <td class="p-3 text-center border border-dark"><h3>Output</h3></td>
+    </tr>
+    <tr>
+      <td class="p-3 space-y-1 border border-dark">
+        <input class="form-control" type="text" [(ngModel)]='directiveName' placeholder="Name">
+        <input class="form-control" type="email" [(ngModel)]='directiveEmail' placeholder="Email">
+        <textarea class="form-control" placeholder="Address" [(ngModel)]='directiveAddress'></textarea>
+        <button (click)="saveDirectiveData()" class="btn btn-dark">Save Details</button>
+      </td>
+      <td style="padding: 15px; vertical-align: top;">
+        <table class="table table-striped" *ngIf="directiveArray.length > 0; else noData">
+          <tr class="text-center">
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Action</th>
+          </tr>
+          <tr *ngFor='let detail of directiveArray; let i = index' style="text-align: center;">
+            <td class="p-3">{{ i + 1 }}</td>
+            <td class="p-3">{{ detail.name }}</td>
+            <td class="p-3" style="word-break: break-all; width: 30%">{{ detail.email }}</td>
+            <td class="p-3">{{ detail.address }}</td>
+            <td class="p-3">
+              <button (click)="delDirectiveArrayObj(i)" class="btn btn-danger btn-sm text-dark border border-danger">Delete</button>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>  
+  <ng-template #noData>
+    <h3 class="text-center">No Data Found</h3>
+  </ng-template>
+</div>
 
+<div class="web-section">
+  <h3 class="box-title"># Uppercase and Lowercase Pipe</h3>
+  <p class="mb-0">Uppercase Pipe => {{ pipeTitle | uppercase }}</p>
+  <p class="mb-0">Lowercase Pipe => {{ pipeTitle | lowercase }}</p>
+</div>
 
+<div class="web-section">
+  <h3 class="box-title"># Number or Decimal Pipe</h3>
+  <p class="mb-0">Number/Decimal Pipe => {{ pipeNumber | number }}</p>
+  <p class="mb-0">Number/Decimal Pipe => {{ pipeDecimal | number: '1.2-5' }}</p>
+  <p class="mb-0">Number/Decimal Pipe => {{ pipeDecimal | number: '2.0-0' }}</p>
+  <p class="mb-0">Number/Decimal Pipe => {{ pipeDecimal | number: '2.0-1' }}</p>
+  <p class="mb-0">Number/Decimal Pipe => {{ pipeDecimal | number: '2.2-2' }}</p>
+  <p class="mb-0">Number/Decimal Pipe => {{ pipeDecimal | number: '5.2-2' }}</p>
+</div>
 
+<div class="web-section">
+  <h3 class="box-title"># Currency Pipe</h3>
+  <p class="mb-0">Currency Pipe => {{ pipeCurrency | currency }}</p>
+  <p class="mb-0">Currency Pipe => {{ pipeCurrency | currency:"CAD" }}</p>
+  <p class="mb-0">Currency Pipe => {{ pipeCurrency | currency:"INR" }}</p>
+  <p class="mb-0">Currency Pipe => {{ pipeCurrency | currency:"JPY" }}</p>
+  <p class="mb-0">Currency Pipe => {{ pipeCurrency | currency:"USD" : false }}</p>
+  <p class="mb-0">Currency Pipe => {{ pipeCurrency | currency:"USD" : true }}</p>
+  <p class="mb-0">Currency Pipe => {{ pipeCurrency | currency : "USD" : true : '3.2-4' }}</p>
+</div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<div class="web-section">
+  <h3 class="box-title"># Date Pipe</h3>
+  <!-- Refer: https://angular.io/api/common/DatePipe -->
+  <p class="mb-0">Date Pipe => {{ pipeDate }}</p>
+  <p class="mb-0">Date Pipe => {{ pipeDate | date : "short" }}</p>
+  <p class="mb-0">Date Pipe => {{ pipeDate | date : "shortDate"  }}</p>
+  <p class="mb-0">Date Pipe => {{ pipeDate | date : "d-M-yy"  }}</p>
+  <p class="mb-0">Date Pipe => {{ pipeDate | date : "d/MM/yyyy"  }}</p>
+  <p class="mb-0">Date Pipe => {{ pipeDate | date : "shortTime"  }}</p>
+</div>
+
+<div class="web-section">
+  <h3 class="box-title"># JSON Pipe</h3>
+  <p class="mb-0">JSON Pipe => {{ pipeJson }}</p>
+  <p class="mb-0">JSON Pipe => {{ pipeJson | json }}</p>
+  <p class="mb-0">JSON Pipe => {{ pipeJson.postTitle | json }}</p>
+</div>
+
+<div class="web-section">
+  <h3 class="box-title"># Percent Pipe</h3>
+  <p class="mb-0">Percent Pipe => {{ pipePercent | percent }}</p>
+  <p class="mb-0">Percent Pipe => {{ 5 | percent }}</p>
+  <p class="mb-0">Percent Pipe => {{ 5.59896 | percent }}</p>
+  <p class="mb-0">Percent Pipe => {{ 5.59896 | percent : "2.3-3" }}</p>
+</div>
+
+<div class="web-section">
+  <h3 class="box-title"># Slice Pipe</h3>
+  <p class="mb-0">Slice Pipe => {{ pipeSlice }}</p>
+  <p class="mb-0">Slice Pipe => {{ pipeSlice | slice : 0 : 3 }}</p>
+  <p class="mb-0">Slice Pipe => {{ pipeSlice | slice : 3 : 5 }}</p>
+</div>
+
+<div class="web-section">
+  <h3 class="box-title"># Custom Pipe (Scratch)</h3>
+  <!-- Append 'Manish says' -->
+  <p class="mb-0">Custom Pipe => {{ "Hello." | append }}</p>
+  <p class="mb-0">Custom Pipe => {{ "that he loves Watermelon." | append }}</p>
+</div>
+
+<div class="web-section">
+  <h3 class="box-title"># Custom Pipe (Angular CLI)</h3>
+  <!-- Append 'City Name: ' -->
+  <p class="mb-0">Custom Pipe => {{ "Mumbai" | appendCLI }}</p>
+</div>
+
+<div class="web-section">
+  <h3 class="box-title"># Custom Pipe (With Arguments)</h3>
+  <!-- Reduce a String to defined no. of characters -->
+  <p class="mb-0">Custom Pipe => {{ pipeCustomString | summary : 20 }}</p>
+  <p class="mb-0">Custom Pipe => {{ pipeCustomString | summary }}</p>
+  <p class="mb-0">Custom Pipe => {{ pipeCustomString | summary : 40}}</p>
+</div>
+
+<div class="web-section">
+  <app-navbar></app-navbar>
+</div>

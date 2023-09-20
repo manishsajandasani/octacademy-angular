@@ -63,7 +63,7 @@
   - Use Data Members of a Service (By Creating Instance)
   - Use Data Members of a Service (By Dependency Injection)
   - Perform CRUD Operations in Services
-  - Create Interface to act as a Blueprint for the Object in order to avoid data member errors on the compile time
+  - Create Interface to act as a Blueprint for the Object in order to avoid data member errors on the compile time (Data Modeling)
 
 # What is Angular?
 
@@ -275,3 +275,12 @@ export class PostComponent implements OnInit {
 - CRUD with Angular Service
 - What is Data Modeling and Angular Interface?
   `ng g i Models/usermodel`
+
+# Angular Forms
+
+- What are the forms types in Angular?
+  - Template Driven Form
+  - Reactive Form
+- What is Template Driven Form and how to use that?
+- How to Validate forms user inputs?
+- How to control Enable / Disable state of a button?
